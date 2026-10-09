@@ -432,8 +432,22 @@ nav a[aria-current="page"] {
 }
 
 .map-icon {
-  font-size: 1.8rem;
-  margin-bottom: 12px;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 16px;
+  transition: all 0.3s var(--ease);
+}
+
+.map a:hover .map-icon {
+  background: var(--primary);
+  color: #FFFFFF;
+  transform: scale(1.06);
 }
 
 .map b {

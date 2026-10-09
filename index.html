@@ -40,7 +40,32 @@
         <rect x="262" y="174" width="60" height="24" rx="12" fill="#F59E0B"/>
       </symbol>
 
-      <!-- Icons -->
+      <!-- UI Icons -->
+      <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+        <circle cx="12" cy="7" r="4"></circle>
+      </symbol>
+      <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+        <polyline points="2 17 12 22 22 17"></polyline>
+        <polyline points="2 12 12 17 22 12"></polyline>
+      </symbol>
+      <symbol id="i-file-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+        <polyline points="14 2 14 8 20 8"></polyline>
+        <line x1="16" y1="13" x2="8" y2="13"></line>
+        <line x1="16" y1="17" x2="8" y2="17"></line>
+        <polyline points="10 9 9 9 8 9"></polyline>
+      </symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="2" y1="12" x2="22" y2="12"></line>
+        <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+      </symbol>
+      <symbol id="i-briefcase" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+        <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path>
+      </symbol>
       <symbol id="i-github" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
         <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path>
         <path d="M9 18c-4.51 2-5-2-7-2"></path>
@@ -155,28 +180,28 @@
           <ul class="map">
             <li>
               <a href="#about">
-                <div class="map-icon">👨‍💻</div>
+                <div class="map-icon"><svg width="22" height="22"><use href="#i-user"/></svg></div>
                 <b>About Me</b>
                 <span>Education, frontend experience, and core technical skills.</span>
               </a>
             </li>
             <li>
               <a href="#projects">
-                <div class="map-icon">🚀</div>
+                <div class="map-icon"><svg width="22" height="22"><use href="#i-layers"/></svg></div>
                 <b>Featured Projects</b>
                 <span>Deepfake Shield AI, Business Nexus, and IoT builds.</span>
               </a>
             </li>
             <li>
               <a href="#resume">
-                <div class="map-icon">📄</div>
+                <div class="map-icon"><svg width="22" height="22"><use href="#i-file-text"/></svg></div>
                 <b>Interactive Resume</b>
                 <span>Comprehensive CV with direct PDF and Word downloads.</span>
               </a>
             </li>
             <li>
               <a href="#contact">
-                <div class="map-icon">✉️</div>
+                <div class="map-icon"><svg width="22" height="22"><use href="#i-mail"/></svg></div>
                 <b>Get in Touch</b>
                 <span>Direct contact links and instant message sender.</span>
               </a>
@@ -584,11 +609,11 @@
               <div class="cv-block">
                 <h3>Contact</h3>
                 <p>
-                  📞 0349-5400525<br>
-                  ✉️ <a href="mailto:nabeelhussain.se@gmail.com">nabeelhussain.se@gmail.com</a><br>
-                  📍 Mirpur, Azad Kashmir, Pakistan<br>
-                  🌐 <a href="https://github.com/Nabeelhussa" target="_blank" rel="noopener">github.com/Nabeelhussa</a><br>
-                  💼 <a href="https://www.linkedin.com/in/nabeelhussain-9907303a1" target="_blank" rel="noopener">LinkedIn Profile</a>
+                  <svg width="15" height="15"><use href="#i-phone"/></svg> 0349-5400525<br>
+                  <svg width="15" height="15"><use href="#i-mail"/></svg> <a href="mailto:nabeelhussain.se@gmail.com">nabeelhussain.se@gmail.com</a><br>
+                  <svg width="15" height="15"><use href="#i-location"/></svg> Mirpur, Azad Kashmir, Pakistan<br>
+                  <svg width="15" height="15"><use href="#i-globe"/></svg> <a href="https://github.com/Nabeelhussa" target="_blank" rel="noopener">github.com/Nabeelhussa</a><br>
+                  <svg width="15" height="15"><use href="#i-briefcase"/></svg> <a href="https://www.linkedin.com/in/nabeelhussain-9907303a1" target="_blank" rel="noopener">LinkedIn Profile</a>
                 </p>
               </div>
 
