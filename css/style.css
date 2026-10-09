@@ -1,4 +1,4 @@
-/* Modern Light Portfolio Design System */
+/* Modern Portfolio Design System (Clean Standard Typography) */
 :root {
   --bg-body: #F8FAFC;
   --bg-surface: #F1F5F9;
@@ -22,9 +22,8 @@
   --border-light: #E2E8F0;
   --border-hover: #C7D2FE;
   
-  --font-h: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
-  --font-b: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-h: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-b: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
   
   --shadow-sm: 0 1px 3px rgba(15, 23, 42, 0.06);
   --shadow-md: 0 6px 16px -2px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.03);
@@ -32,7 +31,7 @@
   --shadow-hover: 0 22px 45px -10px rgba(79, 70, 229, 0.2), 0 12px 24px -6px rgba(15, 23, 42, 0.08);
 
   --radius-sm: 8px;
-  --radius-md: 14px;
+  --radius-md: 12px;
   --radius-lg: 20px;
   --radius-full: 9999px;
   
@@ -104,12 +103,12 @@ section { padding: 72px 0; }
 
 .section-kicker {
   display: inline-block;
-  font-family: var(--font-mono);
+  font-family: var(--font-b);
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary);
   text-transform: uppercase;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   margin-bottom: 8px;
 }
 
@@ -126,7 +125,7 @@ header.top {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(255, 255, 255, 0.88);
+  background: rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid rgba(226, 232, 240, 0.8);
@@ -275,7 +274,7 @@ nav a[aria-current="page"] {
   padding: 11px 22px;
   border-radius: var(--radius-full);
   font-weight: 600;
-  font-size: 0.98rem;
+  font-size: 0.96rem;
   text-decoration: none;
   cursor: pointer;
   transition: all 0.25s var(--ease);
@@ -322,8 +321,9 @@ nav a[aria-current="page"] {
 }
 
 .btn-sm {
-  padding: 7px 15px;
+  padding: 8px 18px;
   font-size: 0.88rem;
+  font-weight: 600;
 }
 
 /* Hero Quick Stats */
@@ -499,7 +499,7 @@ nav a[aria-current="page"] {
 }
 
 .card:hover {
-  transform: translateY(-8px);
+  transform: translateY(-6px);
   box-shadow: var(--shadow-hover);
   border-color: var(--border-hover);
 }
@@ -521,31 +521,7 @@ nav a[aria-current="page"] {
 }
 
 .card:hover .thumb svg {
-  transform: scale(1.05);
-}
-
-.open {
-  position: absolute;
-  right: 14px;
-  bottom: 14px;
-  background: rgba(15, 23, 42, 0.85);
-  backdrop-filter: blur(8px);
-  color: #FFFFFF;
-  padding: 6px 14px;
-  border-radius: var(--radius-full);
-  font-weight: 600;
-  font-size: 0.84rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  opacity: 0;
-  transform: translateY(10px);
-  transition: all 0.3s var(--ease);
-}
-
-.card:hover .open {
-  opacity: 1;
-  transform: translateY(0);
+  transform: scale(1.04);
 }
 
 .card .body {
@@ -576,9 +552,9 @@ nav a[aria-current="page"] {
   color: var(--primary);
   border-radius: var(--radius-full);
   padding: 4px 12px;
-  font-family: var(--font-mono);
+  font-family: var(--font-b);
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: 0.8rem;
   margin-bottom: 12px;
 }
 
@@ -588,7 +564,7 @@ nav a[aria-current="page"] {
 .stack {
   display: flex;
   flex-wrap: wrap;
-  gap: 6px;
+  gap: 8px;
   margin: 16px 0 0;
   padding: 0;
   list-style: none;
@@ -599,9 +575,9 @@ nav a[aria-current="page"] {
   color: var(--text-main);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
-  padding: 3px 10px;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
+  padding: 4px 12px;
+  font-family: var(--font-b);
+  font-size: 0.86rem;
   font-weight: 500;
 }
 
@@ -610,7 +586,7 @@ nav a[aria-current="page"] {
   flex-wrap: wrap;
   gap: 12px;
   margin-top: auto;
-  padding-top: 18px;
+  padding-top: 20px;
 }
 
 /* Big Hero Project Card */
@@ -747,7 +723,7 @@ nav a[aria-current="page"] {
 .badge {
   background: var(--primary-light);
   color: var(--primary);
-  font-family: var(--font-mono);
+  font-family: var(--font-b);
   font-weight: 600;
   font-size: 0.84rem;
   padding: 4px 12px;
@@ -791,7 +767,7 @@ nav a[aria-current="page"] {
 }
 
 .job-header h3 { margin: 0; }
-.job-time { font-family: var(--font-mono); font-size: 0.88rem; font-weight: 600; color: var(--primary); }
+.job-time { font-family: var(--font-b); font-size: 0.98rem; font-weight: 600; color: var(--primary); }
 .job-company { font-weight: 600; color: var(--text-light); font-size: 0.95rem; margin-top: 2px; }
 
 .job ul {
@@ -837,8 +813,8 @@ nav a[aria-current="page"] {
   color: var(--text-main);
   border: 1px solid var(--border-light);
   border-radius: var(--radius-sm);
-  padding: 5px 12px;
-  font-size: 0.88rem;
+  padding: 6px 14px;
+  font-size: 0.9rem;
   font-weight: 500;
   transition: all 0.2s var(--ease);
 }
