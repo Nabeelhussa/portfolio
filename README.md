@@ -41,14 +41,14 @@ The site showcases web applications, client-side AI computer vision tools, and I
 
 ---
 
-## 💻 Technical Skills
+##  Technical Skills
 - **Frontend:** React.js, TypeScript, JavaScript (ES6+), HTML5, CSS3, Tailwind CSS, Vite, Figma
 - **AI & Computer Vision:** TensorFlow.js, MediaPipe, Computer Vision, Deepfake Forensics
 - **Core Languages & Systems:** C++, OOP, Data Structures & Algorithms, Git, Vercel, ESP32, Arduino
 
 ---
 
-## 🚀 Local Development
+##  Local Development
 1. Clone the repository:
    ```bash
    git clone https://github.com/Nabeelhussa/nabeel-portfolio.git
