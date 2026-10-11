@@ -3,8 +3,23 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Nabeel Hussain – Web Developer & AI Engineer</title>
-  <meta name="description" content="Portfolio of Nabeel Hussain, Software Engineering graduate building modern web apps with React and Machine Learning.">
+  <title>Nabeel Hussain – Software Engineer | Frontend &amp; AI</title>
+  <meta name="description" content="Portfolio of Nabeel Hussain, Software Engineering graduate building modern web applications with React, client-side AI with TensorFlow.js, and IoT systems with ESP32.">
+  <meta name="theme-color" content="#4F46E5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0B0F19" media="(prefers-color-scheme: dark)">
+  
+  <!-- Open Graph / LinkedIn / Facebook Social Cards -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nabeelhussain.vercel.app/">
+  <meta property="og:title" content="Nabeel Hussain – Software Engineer | Frontend &amp; AI">
+  <meta property="og:description" content="Software Engineering graduate building responsive React web apps, client-side computer vision with TensorFlow.js, and IoT prototypes with ESP32.">
+  <meta property="og:image" content="assets/photo.jpg">
+  
+  <!-- Twitter Cards -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Nabeel Hussain – Software Engineer | Frontend &amp; AI">
+  <meta name="twitter:description" content="Software Engineering graduate building responsive React web apps, client-side computer vision with TensorFlow.js, and IoT prototypes with ESP32.">
+  <meta name="twitter:image" content="assets/photo.jpg">
   
   <!-- Standard Inter Font -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -126,6 +141,27 @@
         <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
         <circle cx="12" cy="10" r="3"></circle>
       </symbol>
+      <symbol id="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </symbol>
+      <symbol id="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </symbol>
+      <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor">
+        <polygon points="5 3 19 12 5 21 5 3"></polygon>
+      </symbol>
+      <symbol id="i-close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </symbol>
     </defs>
   </svg>
 
@@ -136,13 +172,19 @@
         <span class="logo-mark">NH</span>
         <span class="logo-text">Nabeel Hussain</span>
       </a>
-      <nav aria-label="Main Navigation">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#resume">Resume</a>
-        <a href="#contact">Contact</a>
-      </nav>
+      <div class="header-right">
+        <nav aria-label="Main Navigation">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#resume">Resume</a>
+          <a href="#contact">Contact</a>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle" type="button" aria-label="Toggle Color Theme" title="Switch dark / light mode">
+          <svg class="icon-sun" width="18" height="18"><use href="#i-sun"/></svg>
+          <svg class="icon-moon" width="18" height="18"><use href="#i-moon"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -492,6 +534,9 @@
                 <a class="btn s btn-sm" href="https://github.com/Nabeelhussa/Deepfakeshied" target="_blank" rel="noopener">
                   <svg width="16" height="16"><use href="#i-github"/></svg> GitHub
                 </a>
+                <button class="btn s btn-sm btn-open-case" type="button" data-case="deepfake-shield">
+                  <svg width="14" height="14"><use href="#i-layers"/></svg> Architecture
+                </button>
               </div>
             </div>
           </article>
@@ -545,8 +590,8 @@
           </div>
 
           <!-- IoT Projects Section -->
-          <h2 class="sub">Embedded & IoT Projects</h2>
-          <p class="sub-lead">Hardware C++ simulations built and deployed on the Wokwi online platform.</p>
+          <h2 class="sub">Embedded &amp; IoT Projects</h2>
+          <p class="sub-lead">Interactive C++ hardware simulations running ESP32 and Arduino boards on Wokwi.</p>
           
           <div class="three">
             <article class="card">
@@ -558,7 +603,7 @@
                 <p>ESP32 microcontroller reads dual ultrasonic distance sensors, controls RGB status indicators, and transmits telemetry to ThingSpeak over WiFi.</p>
                 <div class="links">
                   <a class="btn p btn-sm" href="https://wokwi.com/projects/462564700720592897" target="_blank" rel="noopener">
-                    Wokwi Demo <svg width="14" height="14"><use href="#i-external"/></svg>
+                    Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
                   </a>
                 </div>
               </div>
@@ -570,10 +615,10 @@
               </a>
               <div class="body">
                 <h3>Digital Voting Machine</h3>
-                <p>Keypad & 16x2 LCD voting terminal storing encrypted vote tallies in EEPROM memory with password-protected administrator resets.</p>
+                <p>Keypad &amp; 16x2 LCD voting terminal storing encrypted vote tallies in EEPROM memory with password-protected administrator resets.</p>
                 <div class="links">
                   <a class="btn p btn-sm" href="https://wokwi.com/projects/463884427151173633" target="_blank" rel="noopener">
-                    Wokwi Demo <svg width="14" height="14"><use href="#i-external"/></svg>
+                    Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
                   </a>
                 </div>
               </div>
@@ -581,14 +626,14 @@
 
             <article class="card">
               <a class="thumb" href="https://wokwi.com/projects/475659667396482049" target="_blank" rel="noopener" aria-label="Temperature Monitor on Wokwi">
-                <img src="assets/temp-monitor.png" alt="Temperature & Humidity Monitor Circuit Simulation" width="400" height="240" loading="lazy">
+                <img src="assets/temp-monitor.png" alt="Temperature &amp; Humidity Monitor Circuit Simulation" width="400" height="240" loading="lazy">
               </a>
               <div class="body">
-                <h3>Temperature & Humidity Monitor</h3>
+                <h3>Temperature &amp; Humidity Monitor</h3>
                 <p>DHT22 environmental sensor reporting live readings to an I2C LCD display with automatic fault detection and recovery.</p>
                 <div class="links">
                   <a class="btn p btn-sm" href="https://wokwi.com/projects/475659667396482049" target="_blank" rel="noopener">
-                    Wokwi Demo <svg width="14" height="14"><use href="#i-external"/></svg>
+                    Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
                   </a>
                 </div>
               </div>

@@ -145,4 +145,50 @@
       showFeedback('Message draft copied to clipboard! You can paste directly into Gmail or your favorite webmail.', false);
     });
   }
+
+  // =============================================================
+  // Theme Switcher (Dark / Light Mode)
+  // =============================================================
+  var themeToggle = document.getElementById('theme-toggle');
+
+  function applyTheme(theme) {
+    if (theme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    } else {
+      document.documentElement.removeAttribute('data-theme');
+    }
+  }
+
+  function initTheme() {
+    var savedTheme = null;
+    try {
+      savedTheme = localStorage.getItem('theme');
+    } catch (e) {
+      // LocalStorage access might be restricted in some iframe contexts
+    }
+
+    if (savedTheme === 'dark') {
+      applyTheme('dark');
+    } else if (savedTheme === 'light') {
+      applyTheme('light');
+    } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      applyTheme('dark');
+    } else {
+      applyTheme('light');
+    }
+  }
+
+  if (themeToggle) {
+    themeToggle.addEventListener('click', function () {
+      var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+      var newTheme = isDark ? 'light' : 'dark';
+      applyTheme(newTheme);
+      try {
+        localStorage.setItem('theme', newTheme);
+      } catch (e) {}
+    });
+  }
+
+  initTheme();
+
 })();

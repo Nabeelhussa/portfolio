@@ -41,6 +41,119 @@
   box-sizing: border-box;
 }
 
+/* Dark Mode Color System */
+:root[data-theme="dark"] {
+  --bg-body: #0A0E17;
+  --bg-surface: #111827;
+  --bg-card: #162032;
+  --text-main: #F8FAFC;
+  --text-muted: #94A3B8;
+  --text-light: #64748B;
+  
+  --primary: #6366F1;
+  --primary-hover: #818CF8;
+  --primary-light: rgba(99, 102, 241, 0.16);
+  --primary-glow: rgba(99, 102, 241, 0.28);
+  
+  --cyan: #38BDF8;
+  --cyan-light: rgba(56, 189, 248, 0.14);
+  --emerald: #34D399;
+  --emerald-light: rgba(52, 211, 153, 0.14);
+  --amber: #FBBF24;
+  --amber-light: rgba(251, 191, 36, 0.14);
+  
+  --border-light: #243046;
+  --border-hover: #4F46E5;
+  
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 6px 16px -2px rgba(0, 0, 0, 0.6), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 16px 32px -8px rgba(0, 0, 0, 0.7), 0 8px 16px -4px rgba(0, 0, 0, 0.5);
+  --shadow-hover: 0 22px 45px -10px rgba(99, 102, 241, 0.35), 0 12px 24px -6px rgba(0, 0, 0, 0.7);
+
+  color-scheme: dark;
+}
+
+:root[data-theme="dark"] header.top {
+  background: rgba(10, 14, 23, 0.88);
+  border-bottom-color: rgba(36, 48, 70, 0.8);
+}
+
+:root[data-theme="dark"] .hero {
+  background: radial-gradient(circle at 80% 20%, #151D30 0%, #0A0E17 60%, #060910 100%);
+  border-bottom-color: var(--border-light);
+}
+
+:root[data-theme="dark"] .pic-wrapper {
+  background: #162032;
+  border-color: #243046;
+}
+
+:root[data-theme="dark"] .pic::before {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.25) 0%, rgba(56, 189, 248, 0.15) 100%);
+}
+
+:root[data-theme="dark"] .site-footer {
+  background: #0D1320;
+}
+
+:root[data-theme="dark"] .paper {
+  background: #162032;
+  border-color: var(--border-light);
+}
+
+:root[data-theme="dark"] header nav a:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+:root[data-theme="dark"] header nav a[aria-current="page"] {
+  background: #1E293B;
+  color: #818CF8;
+}
+
+:root[data-theme="dark"] .btn.s {
+  background: #162032;
+  color: #F8FAFC;
+  border-color: var(--border-light);
+}
+
+:root[data-theme="dark"] .btn.s:hover {
+  background: var(--primary-light);
+  border-color: var(--primary);
+  color: var(--primary-hover);
+}
+
+:root[data-theme="dark"] .cform input,
+:root[data-theme="dark"] .cform textarea {
+  background: #0E1422;
+  border-color: var(--border-light);
+  color: #F8FAFC;
+}
+
+:root[data-theme="dark"] .hl-badge,
+:root[data-theme="dark"] .info-card,
+:root[data-theme="dark"] .edu-card,
+:root[data-theme="dark"] .skill-category,
+:root[data-theme="dark"] .map li a {
+  background: var(--bg-card);
+  border-color: var(--border-light);
+}
+
+:root[data-theme="dark"] .skill-pills span,
+:root[data-theme="dark"] .stack span {
+  background: #1F2C44;
+  color: #CBD5E1;
+  border-color: #2C3C5A;
+}
+
+:root[data-theme="dark"] .alt {
+  background: #0E1422;
+}
+
+:root[data-theme="dark"] .pipeline-card {
+  background: #111827;
+  border-color: #243046;
+}
+
 *, *::before, *::after {
   box-sizing: inherit;
 }
@@ -173,6 +286,40 @@ header .wrap {
   color: var(--text-main);
   letter-spacing: -0.01em;
 }
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-light);
+  color: var(--text-main);
+  cursor: pointer;
+  transition: all 0.25s var(--ease);
+  padding: 0;
+  flex-shrink: 0;
+}
+
+.theme-toggle:hover {
+  background: var(--primary-light);
+  border-color: var(--border-hover);
+  color: var(--primary);
+  transform: translateY(-1px);
+}
+
+.theme-toggle .icon-sun { display: none; }
+.theme-toggle .icon-moon { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+:root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
 
 header nav {
   display: flex;
@@ -1220,8 +1367,17 @@ header nav a[aria-current="page"] {
 }
 
 @media (max-width: 600px) {
-  nav { gap: 2px; padding: 3px; }
-  nav a { padding: 6px 12px; font-size: 0.85rem; }
+  header .wrap {
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+  }
+  .header-right {
+    width: 100%;
+    justify-content: center;
+  }
+  header nav { gap: 2px; padding: 3px; }
+  header nav a { padding: 6px 10px; font-size: 0.82rem; }
   .hero-highlights { gap: 10px; }
   .hl-badge { flex: 1 1 100%; }
 }
