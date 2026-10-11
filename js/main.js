@@ -191,4 +191,127 @@
 
   initTheme();
 
+  // =============================================================
+  // Interactive Hardware Simulation Modal (Wokwi)
+  // =============================================================
+  var simModal = document.getElementById('sim-modal');
+  var simTitleEl = document.getElementById('sim-modal-title');
+  var simFrameContainer = document.getElementById('sim-frame-container');
+  var simExternalLink = document.getElementById('sim-external-link');
+  var simCloseBtn = document.getElementById('sim-close-btn');
+
+  function openSimModal(simId, title) {
+    if (!simModal || !simFrameContainer) return;
+
+    if (simTitleEl) {
+      simTitleEl.textContent = title || 'Circuit Simulation';
+    }
+
+    if (simExternalLink) {
+      simExternalLink.href = 'https://wokwi.com/projects/' + encodeURIComponent(simId);
+    }
+
+    // Dynamic iframe injection: only loads when requested to conserve CPU & memory
+    simFrameContainer.innerHTML = '';
+    var iframe = document.createElement('iframe');
+    iframe.src = 'https://wokwi.com/projects/' + encodeURIComponent(simId) + '?embed=1';
+    iframe.title = title || 'Circuit Simulation';
+    iframe.setAttribute('loading', 'lazy');
+    iframe.setAttribute('allow', 'fullscreen; accelerometer; autoplay; camera; gyroscope; magnetometer; microphone');
+    simFrameContainer.appendChild(iframe);
+
+    simModal.classList.add('is-open');
+    simModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeSimModal() {
+    if (!simModal) return;
+    simModal.classList.remove('is-open');
+    simModal.setAttribute('aria-hidden', 'true');
+    // Clear iframe on close so simulation background audio and loops cease immediately
+    if (simFrameContainer) {
+      simFrameContainer.innerHTML = '';
+    }
+    document.body.style.overflow = '';
+  }
+
+  var runSimButtons = document.querySelectorAll('.btn-run-sim');
+  runSimButtons.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      var simId = btn.getAttribute('data-sim-id');
+      var simTitle = btn.getAttribute('data-sim-title');
+      if (simId) {
+        openSimModal(simId, simTitle);
+      }
+    });
+  });
+
+  if (simCloseBtn) {
+    simCloseBtn.addEventListener('click', closeSimModal);
+  }
+
+  if (simModal) {
+    simModal.addEventListener('click', function (e) {
+      if (e.target === simModal) {
+        closeSimModal();
+      }
+    });
+  }
+
+  // =============================================================
+  // Architecture Case Study Modal (Deepfake Shield)
+  // =============================================================
+  var caseModal = document.getElementById('case-modal');
+  var caseCloseBtn = document.getElementById('case-close-btn');
+  var openCaseButtons = document.querySelectorAll('.btn-open-case');
+
+  function openCaseModal() {
+    if (!caseModal) return;
+    caseModal.classList.add('is-open');
+    caseModal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeCaseModal() {
+    if (!caseModal) return;
+    caseModal.classList.remove('is-open');
+    caseModal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  openCaseButtons.forEach(function (btn) {
+    btn.addEventListener('click', function (e) {
+      e.preventDefault();
+      openCaseModal();
+    });
+  });
+
+  if (caseCloseBtn) {
+    caseCloseBtn.addEventListener('click', closeCaseModal);
+  }
+
+  if (caseModal) {
+    caseModal.addEventListener('click', function (e) {
+      if (e.target === caseModal) {
+        closeCaseModal();
+      }
+    });
+  }
+
+  // =============================================================
+  // Keyboard Accessibility: Escape key closes active modals
+  // =============================================================
+  window.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' || e.keyCode === 27) {
+      if (simModal && simModal.classList.contains('is-open')) {
+        closeSimModal();
+      }
+      if (caseModal && caseModal.classList.contains('is-open')) {
+        closeCaseModal();
+      }
+    }
+  });
 })();
+

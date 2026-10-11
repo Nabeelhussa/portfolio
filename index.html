@@ -602,7 +602,10 @@
                 <h3>Smart Parking System</h3>
                 <p>ESP32 microcontroller reads dual ultrasonic distance sensors, controls RGB status indicators, and transmits telemetry to ThingSpeak over WiFi.</p>
                 <div class="links">
-                  <a class="btn p btn-sm" href="https://wokwi.com/projects/462564700720592897" target="_blank" rel="noopener">
+                  <button class="btn p btn-sm btn-run-sim" type="button" data-sim-id="462564700720592897" data-sim-title="Smart Parking System (ESP32 + ThingSpeak)">
+                    <svg width="13" height="13"><use href="#i-play"/></svg> Run Simulation
+                  </button>
+                  <a class="btn s btn-sm" href="https://wokwi.com/projects/462564700720592897" target="_blank" rel="noopener">
                     Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
                   </a>
                 </div>
@@ -617,7 +620,10 @@
                 <h3>Digital Voting Machine</h3>
                 <p>Keypad &amp; 16x2 LCD voting terminal storing encrypted vote tallies in EEPROM memory with password-protected administrator resets.</p>
                 <div class="links">
-                  <a class="btn p btn-sm" href="https://wokwi.com/projects/463884427151173633" target="_blank" rel="noopener">
+                  <button class="btn p btn-sm btn-run-sim" type="button" data-sim-id="463884427151173633" data-sim-title="Digital Voting Machine (Keypad + EEPROM)">
+                    <svg width="13" height="13"><use href="#i-play"/></svg> Run Simulation
+                  </button>
+                  <a class="btn s btn-sm" href="https://wokwi.com/projects/463884427151173633" target="_blank" rel="noopener">
                     Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
                   </a>
                 </div>
@@ -632,7 +638,10 @@
                 <h3>Temperature &amp; Humidity Monitor</h3>
                 <p>DHT22 environmental sensor reporting live readings to an I2C LCD display with automatic fault detection and recovery.</p>
                 <div class="links">
-                  <a class="btn p btn-sm" href="https://wokwi.com/projects/475659667396482049" target="_blank" rel="noopener">
+                  <button class="btn p btn-sm btn-run-sim" type="button" data-sim-id="475659667396482049" data-sim-title="Temperature &amp; Humidity Monitor (DHT22 + I2C LCD)">
+                    <svg width="13" height="13"><use href="#i-play"/></svg> Run Simulation
+                  </button>
+                  <a class="btn s btn-sm" href="https://wokwi.com/projects/475659667396482049" target="_blank" rel="noopener">
                     Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
                   </a>
                 </div>
@@ -892,6 +901,107 @@
       </div>
     </div>
   </footer>
+
+  <!-- Interactive Simulator Modal -->
+  <div id="sim-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="sim-modal-title">
+    <div class="modal-container modal-sim">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker">Wokwi Hardware Simulation</span>
+          <h3 id="sim-modal-title">Circuit Simulation</h3>
+        </div>
+        <div class="modal-actions">
+          <a id="sim-external-link" class="btn s btn-sm" href="#" target="_blank" rel="noopener">
+            Open in Wokwi <svg width="14" height="14"><use href="#i-external"/></svg>
+          </a>
+          <button id="sim-close-btn" class="modal-close" type="button" aria-label="Close modal">
+            <svg width="20" height="20"><use href="#i-close"/></svg>
+          </button>
+        </div>
+      </div>
+      <div class="modal-body modal-sim-body">
+        <div id="sim-frame-container" class="sim-frame-wrapper"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Deepfake Shield Architecture Modal -->
+  <div id="case-modal" class="modal-overlay" aria-hidden="true" role="dialog" aria-labelledby="case-modal-title">
+    <div class="modal-container modal-case">
+      <div class="modal-header">
+        <div>
+          <span class="modal-kicker">Capstone Architecture Breakdown</span>
+          <h3 id="case-modal-title">Deepfake Shield — In-Browser Forensics Architecture</h3>
+        </div>
+        <button id="case-close-btn" class="modal-close" type="button" aria-label="Close modal">
+          <svg width="20" height="20"><use href="#i-close"/></svg>
+        </button>
+      </div>
+      <div class="modal-body modal-case-body">
+        <div class="case-section">
+          <h4>Why run detection in the browser?</h4>
+          <p>Most deepfake detection tools send user video to remote cloud servers. For high-resolution streams, that introduces bandwidth lag, recurring GPU server bills, and real privacy concerns with transmitting webcam feeds. I built Deepfake Shield to evaluate frames directly in the browser with TensorFlow.js and WebGL, so user video never leaves their local device.</p>
+        </div>
+
+        <div class="case-section">
+          <h4>The 8 Detection Signals</h4>
+          <div class="pipeline-grid">
+            <div class="pipeline-card">
+              <b>1. Landmark Mesh</b>
+              <span>MediaPipe Face Mesh tracks 468 3D landmark points per frame.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>2. Blink Dynamics (EAR)</b>
+              <span>Calculates Eye Aspect Ratio over consecutive frames to catch unnatural blink cadence.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>3. Facial Symmetry</b>
+              <span>Checks for irregular geometric warping across mouth, cheeks, and jawline movements.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>4. Head Pose Alignment</b>
+              <span>Measures Euler angles (Pitch, Yaw, Roll) to verify natural 3D depth and angle changes.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>5. Micro-Pulse (rPPG)</b>
+              <span>Analyzes subtle frame-by-frame skin color changes from capillary blood flow.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>6. Frequency Noise</b>
+              <span>Detects checkerboard pixel artifacts and spectral anomalies left by generative models.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>7. Temporal Jitter</b>
+              <span>Monitors frame boundary transitions to catch facial blending seams and flickering.</span>
+            </div>
+            <div class="pipeline-card">
+              <b>8. CNN Classification</b>
+              <span>Feeds computed facial feature vectors into a lightweight TensorFlow.js model via WebGL.</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="case-section">
+          <h4>Smooth 30+ FPS Execution</h4>
+          <p>Running multi-signal computer vision in a single browser thread can easily freeze the tab. I separated video decoding from landmark inference using <code>requestAnimationFrame</code> and offloaded vector calculations to the GPU via WebGL shaders, maintaining smooth 30+ FPS playback on ordinary laptops.</p>
+        </div>
+
+        <div class="case-section">
+          <h4>Telemetry &amp; Reports</h4>
+          <p>The interface provides a live telemetry HUD over the video stream, with one-click export to <strong>PDF, CSV, and Markdown</strong> for documentation.</p>
+        </div>
+
+        <div class="case-footer-actions">
+          <a class="btn p" href="https://deepfakeshied.vercel.app/" target="_blank" rel="noopener">
+            Try Live Demo <svg width="14" height="14"><use href="#i-external"/></svg>
+          </a>
+          <a class="btn s" href="https://github.com/Nabeelhussa/Deepfakeshied" target="_blank" rel="noopener">
+            <svg width="16" height="16"><use href="#i-github"/></svg> View on GitHub
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <script src="js/main.js"></script>
 </body>
