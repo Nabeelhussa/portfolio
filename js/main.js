@@ -2,7 +2,7 @@
   'use strict';
 
   var validPages = ['home', 'about', 'projects', 'resume', 'contact'];
-  var navLinks = document.querySelectorAll('nav a');
+  var navLinks = document.querySelectorAll('header nav a');
 
   function renderPage() {
     var rawHash = location.hash.replace('#', '');

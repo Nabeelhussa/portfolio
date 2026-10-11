@@ -174,7 +174,7 @@ header .wrap {
   letter-spacing: -0.01em;
 }
 
-nav {
+header nav {
   display: flex;
   align-items: center;
   gap: 6px;
@@ -184,7 +184,7 @@ nav {
   border: 1px solid var(--border-light);
 }
 
-nav a {
+header nav a {
   color: var(--text-muted);
   text-decoration: none;
   font-weight: 600;
@@ -194,12 +194,12 @@ nav a {
   transition: all 0.25s var(--ease);
 }
 
-nav a:hover {
+header nav a:hover {
   color: var(--primary);
   background: rgba(255, 255, 255, 0.6);
 }
 
-nav a[aria-current="page"] {
+header nav a[aria-current="page"] {
   color: var(--primary);
   background: #FFFFFF;
   box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
@@ -1097,23 +1097,6 @@ nav a[aria-current="page"] {
   line-height: 1.55;
 }
 
-.ft-nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  flex-wrap: wrap;
-}
-
-.ft-nav a {
-  color: var(--text-muted);
-  font-size: 0.92rem;
-  font-weight: 600;
-  transition: color 0.2s var(--ease);
-}
-
-.ft-nav a:hover {
-  color: var(--primary);
-}
 
 .ft-socials {
   display: flex;
