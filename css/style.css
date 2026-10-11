@@ -347,6 +347,8 @@ header nav a[aria-current="page"] {
 .pic {
   position: relative;
   justify-self: center;
+  align-self: flex-start;
+  margin-top: 8px;
   width: 100%;
   max-width: 310px;
 }
@@ -1202,8 +1204,10 @@ header nav a[aria-current="page"] {
 
   .pic {
     order: -1;
+    align-self: center;
     max-width: 240px;
-    margin-bottom: 12px;
+    margin-top: 0;
+    margin-bottom: 20px;
   }
   
   .paper aside {
